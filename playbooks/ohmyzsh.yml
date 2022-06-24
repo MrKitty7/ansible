@@ -1,0 +1,27 @@
+- name: install ohmyzsh and configure it
+  hosts: "*"
+  tasks:
+    - name: install zsh
+      apt:
+        name: zsh
+        state: present
+      become: true
+    #- name: install ohmyzsh
+    #  shell: sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+   #   become: true
+    - name: install fonts-powerline
+      apt:
+        name: fonts-powerline
+        state: present
+    - name: install git
+      apt:
+        name: git
+        state: present
+      become: true
+    #- name: install zsh-autosuggestions
+      #shell: git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+      #become: true
+    - name: copy zsh config
+      copy:
+        src: ~/.zshrc
+        dest: ~/.zshrc

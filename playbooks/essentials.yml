@@ -1,0 +1,48 @@
+- name: install all essential tools
+  hosts: "*"
+  become: true
+  tasks:
+    - name: install python 3
+      apt:
+        name: python3
+        state: present
+        update_cache: true
+    - name: install qemu-guest-agent
+      apt:
+        name: qemu-guest-agent
+        state: present
+    - name: install git
+      apt:
+        name: git
+        state: present
+        update_cache: true
+    - name: install zsh
+      apt:
+        name: zsh
+        state: present
+        update_cache: true
+    - name: install fonts-powerline
+      apt:
+        name: fonts-powerline
+        state: present
+        update_cache: true
+    - name: install docker
+      apt:
+        name: docker.io
+        state: present
+        update_cache: true
+      become: true
+    - name: install docker-compose
+      apt:
+        name: docker-compose
+        state: present
+    - name: install net-tools
+      apt:
+        name: net-tools
+        state: present
+        update_cache: true
+      become: true
+    - name: install htop
+      apt:
+        name: htop
+        state: present

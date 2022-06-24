@@ -1,0 +1,9 @@
+[always]
+192.168.1.13
+omv
+development
+pterodactyl
+
+[normal]
+urbackup
+jellyfin
