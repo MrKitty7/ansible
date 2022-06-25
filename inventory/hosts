@@ -1,8 +1,10 @@
 [always]
-192.168.1.13
+pihole
 omv
 development
 pterodactyl
+ship
+deployment
 
 [normal]
 urbackup
